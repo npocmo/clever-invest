@@ -222,9 +222,12 @@ public class GammelGeldActivity extends AppCompatActivity {
 
     public void startScan(View view) {
         Intent intent = new Intent(this, ScanActivity.class);
-
         startActivity(intent);
+    }
 
+    public void startInfo(View view) {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
     }
 
 }

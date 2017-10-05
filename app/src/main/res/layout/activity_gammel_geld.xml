@@ -80,7 +80,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="@color/bright_yellow"
                                 android:text="info"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                android:onClick="startInfo"/>
 
                             <Button
                                 android:layout_width="wrap_content"

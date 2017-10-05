@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
     NavigationView menu;
     DrawerLayout drawerLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
