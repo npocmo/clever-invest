@@ -1,5 +1,6 @@
 package com.example.dima.cleverinvest;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+    Button leftMoneyAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends Activity {
         });
 
         setAmount();
+        startCountAnimation();
     }
 
     private void setAmount() {
@@ -43,7 +47,7 @@ public class MainActivity extends Activity {
         TextView summeAmount = (TextView) findViewById(R.id.summe_amount);
         summeAmount.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getSumme()));
 
-        Button leftMoneyAmount = (Button) findViewById(R.id.left_money_amount);
+        leftMoneyAmount = (Button) findViewById(R.id.left_money_amount);
         leftMoneyAmount.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyToInvest()));
 
         leftMoneyAmount.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +63,26 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    private void startCountAnimation() {
+        ValueAnimator animator = ValueAnimator.ofFloat(0, (float) AmountHelper.getInstance().getMoneyToInvest());
+        animator.setDuration(3000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                leftMoneyAmount.setText(StringHelper.formatDecimal((float) animation.getAnimatedValue()));
+            }
+        });
+        animator.start();
+    }
+
     @Override
-    public void overridePendingTransition(int enterAnim, int exitAnim) {
-        super.overridePendingTransition(enterAnim, exitAnim);
+    public void finishActivity(int requestCode) {
+        super.finishActivity(requestCode);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 }

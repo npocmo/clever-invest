@@ -12,4 +12,9 @@ public class StringHelper {
         NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.GERMANY);
         return formatter.format(number);
     }
+
+    public static String formatDecimal(float number) {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.GERMANY);
+        return formatter.format(number);
+    }
 }

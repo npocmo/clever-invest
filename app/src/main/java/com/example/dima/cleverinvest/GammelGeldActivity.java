@@ -1,13 +1,11 @@
 package com.example.dima.cleverinvest;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.AttributeSet;
-import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,21 +54,31 @@ public class GammelGeldActivity extends AppCompatActivity {
         // Disable viewport recalculations, see toggleCubic() method for more info.
         chart.setViewportCalculationEnabled(false);
 
-        //resetViewport();
+        TextView lazyMoney = (TextView) findViewById(R.id.lazyMoney);
+        lazyMoney.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyToInvest()));
 
+        TextView gammelGeld = (TextView) findViewById(R.id.gammelGeldGegenwert);
+        String youCouldHave = StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyYouCouldHave());
+        gammelGeld.setText(getString(R.string.you_could_have, youCouldHave));
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+    public void finishActivity(int requestCode) {
+        super.finishActivity(requestCode);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
 
-        return super.onCreateView(parent, name, context, attrs);
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 
     private void generateValues() {
         //for (int i = 0; i < maxNumberOfLines; ++i) {
-            //for (int j = 0; j < numberOfPoints; ++j) {
-                //randomNumbersTab[i][j] = (float) Math.random() * 100f;
-            //}
+        //for (int j = 0; j < numberOfPoints; ++j) {
+        //randomNumbersTab[i][j] = (float) Math.random() * 100f;
+        //}
         //}
         int i = 0;
         randomNumbersTab[0][i] = (float) 115;
