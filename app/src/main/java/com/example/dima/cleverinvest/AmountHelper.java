@@ -10,6 +10,9 @@ public class AmountHelper {
     private double visaAmount;
     private double depotAmount;
 
+    private double threeMonthsBeforeSaldo = 600;
+    private double twoMonthsBeforeSaldo = 800;
+    private double oneMonthsBeforeSaldo = 900;
 
     public static AmountHelper instance;
 
@@ -55,5 +58,9 @@ public class AmountHelper {
 
     public double getSumme() {
         return giroAmount + visaAmount + depotAmount;
+    }
+
+    public double getMoneyToInvest() {
+        return ((threeMonthsBeforeSaldo + twoMonthsBeforeSaldo + oneMonthsBeforeSaldo) * 0.8)/3;
     }
 }

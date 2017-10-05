@@ -1,11 +1,13 @@
 package com.example.dima.cleverinvest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +28,6 @@ public class MainActivity extends Activity {
         });
 
         setAmount();
-        setToolbar();
-
     }
 
     private void setAmount() {
@@ -42,16 +42,25 @@ public class MainActivity extends Activity {
 
         TextView summeAmount = (TextView) findViewById(R.id.summe_amount);
         summeAmount.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getSumme()));
+
+        Button leftMoneyAmount = (Button) findViewById(R.id.left_money_amount);
+        leftMoneyAmount.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyToInvest()));
+
+        leftMoneyAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGammelActivity();
+            }
+        });
     }
 
-    private void setToolbar() {
-//        getSupportActionBar().setTitle("Clever Invest");
-//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(R.color.dark)));
+    private void startGammelActivity() {
+        Intent intent = new Intent(this, GammelGeldActivity.class);
+        startActivity(intent);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add("Bearbeiten");
-        return super.onCreateOptionsMenu(menu);
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+        super.overridePendingTransition(enterAnim, exitAnim);
     }
 }
