@@ -39,7 +39,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -107,7 +108,6 @@
                     android:layout_below="@id/informer"
                     android:orientation="vertical">
 
-                    <!-- Cola -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -161,7 +161,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- BMW -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -215,7 +214,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Adidas -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -268,7 +266,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Apple -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -321,14 +318,16 @@
                                 android:text="-" />
                         </LinearLayout>
                     </LinearLayout>
-
                 </LinearLayout>
+
                 <lecho.lib.hellocharts.view.LineChartView
                     android:id="@+id/chart"
                     android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@+id/scaned"
                     android:layout_margin="10dp"
-                    android:layout_height="200dp"
-                    android:layout_below="@+id/scaned" />
+                    android:paddingBottom="50dp"
+                    android:paddingTop="10dp" />
             </RelativeLayout>
         </ScrollView>
 
