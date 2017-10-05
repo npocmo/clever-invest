@@ -63,4 +63,8 @@ public class AmountHelper {
     public double getMoneyToInvest() {
         return ((threeMonthsBeforeSaldo + twoMonthsBeforeSaldo + oneMonthsBeforeSaldo) * 0.8)/3;
     }
+
+    public double getMoneyYouCouldHave() {
+        return getMoneyToInvest() * 1.3;
+    }
 }

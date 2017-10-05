@@ -60,13 +60,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/lazyMoney"
                             android:layout_width="150dp"
                             android:layout_height="90dp"
-                            android:background="@color/bright_yellow"
-                            android:paddingLeft="30dp"
-                            android:paddingTop="25dp"
-                            android:text="+490€"
+                            android:gravity="center"
+                            android:text="490€"
                             android:textColor="@android:color/black"
                             android:textSize="30sp" />
 
@@ -86,7 +84,7 @@
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sonstiges"
+                                android:text="Settings"
                                 android:textSize="12sp" />
 
                         </LinearLayout>
@@ -96,7 +94,7 @@
                         android:id="@+id/gammelGeldGegenwert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wenn du investiert hättest, wären es 612,89€."
+                        android:text="@string/you_could_have"
                         android:textColor="@color/red"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -139,7 +137,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Coca-Cola (38,63EUR)"
+                                android:text="Coca-Cola (38,63 EUR)"
                                 android:textColor="@color/dark"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -191,7 +189,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BMW (88,99EUR)"
+                                android:text="BMW (88,99 EUR)"
                                 android:textColor="@color/dark"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -243,7 +241,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="adidas N (194,70EUR)"
+                                android:text="adidas N (194,70 EUR)"
                                 android:textColor="@color/dark"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -297,7 +295,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Apple Inc (153,48EUR)"
+                                android:text="Apple Inc (153,48 EUR)"
                                 android:textColor="@color/dark"
                                 android:textSize="12sp" />
                         </LinearLayout>

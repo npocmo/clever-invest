@@ -147,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Money to Invest:"
+                    android:text="Lazy Money:"
                     android:layout_alignBaseline="@+id/left_money_amount"
                     android:layout_alignBottom="@+id/left_money_amount"
                     android:layout_alignParentStart="true" />
@@ -155,8 +155,8 @@
                 <Button
                     android:id="@+id/left_money_amount"
                     style="@style/Positive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentEnd="true"
                     android:backgroundTint="@color/bright_yellow"
                     android:textColor="@android:color/black"

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CleverInvest</string>
+    <string name="you_could_have">You could have %1$s, if you invested in securities</string>
 </resources>
