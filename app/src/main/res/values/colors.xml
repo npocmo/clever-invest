@@ -10,6 +10,7 @@
     <color name="lightGray">#cccccc</color>
     <color name="dark">#28373c</color>
     <color name="bright_yellow">#fff500</color>
+    <color name="orange">#e0700a</color>
 
     <color name="comdirect_bottom_line_color_1">#00e1af</color>
     <color name="comdirect_bottom_line_color_2">#c6f127</color>

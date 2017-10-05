@@ -358,7 +358,8 @@
                 android:layout_weight="0.5"
                 android:background="@drawable/bottom_toolbar_button_style"
                 android:text="Invest"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:onClick="startInvest" />
         </LinearLayout>
 
     </RelativeLayout>

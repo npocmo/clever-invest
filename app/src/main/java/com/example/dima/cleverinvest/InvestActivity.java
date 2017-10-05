@@ -1,11 +1,10 @@
 package com.example.dima.cleverinvest;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,35 +17,27 @@ import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.ValueShape;
 import lecho.lib.hellocharts.view.LineChartView;
 
-public class GammelGeldActivity extends AppCompatActivity {
+public class InvestActivity extends AppCompatActivity {
 
-    private LineChartView chart;
+    private LineChartView chart1;
     private int numberOfPoints = 6;
 
     float[] musterdepotValues = new float[120];
 
     private ValueShape shape = ValueShape.CIRCLE;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gammel_geld);
+        setContentView(R.layout.activity_invest);
 
-        chart = (LineChartView) findViewById(R.id.chart);
+        chart1 = (LineChartView) findViewById(R.id.chart1);
 
         generateValues();
 
         generateData();
 
         // Disable viewport recalculations, see toggleCubic() method for more info.
-        chart.setViewportCalculationEnabled(false);
-
-        TextView lazyMoney = (TextView) findViewById(R.id.lazyMoney);
-        lazyMoney.setText(StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyToInvest()));
-
-        TextView gammelGeld = (TextView) findViewById(R.id.gammelGeldGegenwert);
-        String youCouldHave = StringHelper.formatDecimal(AmountHelper.getInstance().getMoneyYouCouldHave());
-        gammelGeld.setText(getString(R.string.you_could_have, youCouldHave));
+        chart1.setViewportCalculationEnabled(false);
     }
 
     @Override
@@ -210,21 +201,7 @@ public class GammelGeldActivity extends AppCompatActivity {
         }
 
         data.setBaseValue(Float.NEGATIVE_INFINITY);
-        chart.setLineChartData(data);
-    }
-
-    public void startInvest(View view) {
-        Intent intent = new Intent(this, InvestActivity.class);
-
-        startActivity(intent);
-
-    }
-
-    public void startScan(View view) {
-        Intent intent = new Intent(this, ScanActivity.class);
-
-        startActivity(intent);
-
+        chart1.setLineChartData(data);
     }
 
 }

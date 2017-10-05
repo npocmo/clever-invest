@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ScanActivity"></activity>
+        <activity android:name=".InvestActivity"></activity>
         <activity android:name=".InfoActivity"></activity>
         <activity android:name=".GammelGeldActivity"></activity>
         <activity android:name=".MainActivity">
