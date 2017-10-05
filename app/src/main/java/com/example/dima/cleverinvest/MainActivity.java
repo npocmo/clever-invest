@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.tensorflow.demo.DetectorActivity;
+
 public class MainActivity extends Activity {
 
     Button leftMoneyAmount;
@@ -75,7 +77,8 @@ public class MainActivity extends Activity {
     }
 
     private void startGammelActivity() {
-        Intent intent = new Intent(this, GammelGeldActivity.class);
+        //Intent intent = new Intent(this, GammelGeldActivity.class);
+        Intent intent = new Intent(this, DetectorActivity.class);
         startActivity(intent);
     }
 
