@@ -2,6 +2,7 @@ package com.example.dima.cleverinvest;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -220,6 +221,13 @@ public class GammelGeldActivity extends AppCompatActivity {
 
         data.setBaseValue(Float.NEGATIVE_INFINITY);
         chart.setLineChartData(data);
+    }
+
+    public void startScan(View view) {
+        Intent intent = new Intent(this, ScanActivity.class);
+
+        startActivity(intent);
+
     }
 
 }

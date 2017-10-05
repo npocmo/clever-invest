@@ -350,7 +350,8 @@
                 android:layout_weight="0.5"
                 android:background="@drawable/bottom_toolbar_button_style"
                 android:text="Scan"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:onClick="startScan"/>
 
             <Button
                 android:layout_width="150dp"
